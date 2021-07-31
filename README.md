@@ -32,20 +32,11 @@ Access-Control-Allow-Origin: *
 }]
 ```
 
-## Run using docker compose
-Optionally to run the actions server in separate container start the services using docker-compose. The action server runs on http://action_server:5055/webhook (docker's internal network). The rasa-core services uses the config/endpoints.local.yml to find this actions server
-
-```
-sudo docker-compose up
-```
-
 # Deploy on Heroku for testing
 
 ```
 heroku login
 
-git add .
-git commit -m "commmit message here"
 ```
 For free tier heroku deployment, we have to run both rasa server and custom action server in a same container.
 So, pushing project as a docker container:
@@ -56,6 +47,9 @@ sudo heroku container:push -a <heroku app name> web
 ```
 sudo heroku container:release -a <heroku app name> web
 ```
+
+https://*******.herokuapp.com/webhooks/rest/webhook backend endpoint
+Demo: https://sbmagar.github.io
 
 # Deploy in server other than heroku
 We can deploy with any method(docker container, docker-compose, or using "supervisord" for multiple services processing)
