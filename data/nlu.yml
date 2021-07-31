@@ -1,0 +1,184 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - namaste
+    - Excuse me
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - is this a chatbot?
+    - is this a real person?
+    - you're a bot, aren't you?
+    - are u there?
+    - who are you?
+    - are you sagar?
+    - what is your name?
+
+
+- intent: out_of_scope
+  examples: |
+    - hell
+    - I am your boss
+    - fuck
+    - get out
+    - what the hell
+    - kiss
+    - I need a thesis book
+    - what should I write my blog on
+    - I'm don
+    - which food is your favorite
+    - your favorite song
+    - your best habits
+    - English level
+    - 1
+    - 2
+    - 8
+
+
+- intent: faq/ask_contact
+  examples: |
+    - how can I contact?
+    - what is the best way to contact you?
+    - contact
+    - contact you
+    - how to contact you?
+    - how to contact sagar?
+    - way to contact sagar
+    - how can I contact sagar?
+    - can I get your mail?
+    - your mail address
+    - mail
+    - gmail
+    - email
+    - number
+    - phone number
+    - contact number
+
+- intent: faq/ask_aboutme
+  examples: |
+    - what is your main language?
+    - what is your expertise?
+    - which is your field
+    - are you backend developer?
+    - are you frontedn developer?
+    - frontend or backend
+    - do you know frontend?
+    - which language are you comfortable in?
+    - which is your programming language?
+    - do you know about devops?
+    - what about devops?
+
+
+- intent: ask_info
+  examples: |
+    - What are your experiences ?
+    - what about your informations ?
+    - What can you do ?
+    - what kind of [project](info_type) you have done ?
+    - How is your previos [works](info_type)
+    - Tell me about [works](info_type) you have done so far 
+    - tell me about your experiences
+    - achievements ?
+
+
+- intent: inform
+  examples: |
+    - I love to read [blogs](info_type)
+    - i prefer reading [blog](info_type)
+    - [work](info_type)
+    - i wanna know about [works](info_type)
+    - [researches](info_type)
+    - [research](info_type)
+    - [blog](info_type)
+    - — what about [work](info_type) then ?
+    - What about your [work](info_type)
+    - Oh and [work](info_type) experiences ?
+    - [project](info_type)
+    - [projects](info_type) done
+    - I'd like to know about your past [work](info_type)
+    - [Projects](info_type) you have done

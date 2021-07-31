@@ -1,0 +1,71 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - faq
+  - ask_info:
+      use_entities: true
+  - inform:
+      use_entities: true
+  - out_of_scope
+
+entities:
+  - info_type
+
+slots:
+  info_type:
+    type: text
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, made by Sagar."
+
+  utter_faq/ask_contact:
+  - text: "You can contact through mail <a href='mailto:Sbmagar.sbm55@gmail.com'>sbmagar.sbm99@gmail.com</a>, or contact me at +9779805275666, +9779864420272"
+
+  utter_faq/ask_aboutme:
+  - text: "I am a python developer specially more into backend development than frontend or devops."
+
+  utter_ask_type:
+  - text: "I have done some projects during as a pervious works as well as personal projects, I am very fond of writing blogs about what I've learned as well. There is some research based project also. You can take a look on my works, blogs or researches, if you want to:"
+    buttons:
+    - title: "works"
+      payload: '/inform{{"info_type":"Work"}}'
+    - title: "blogs"
+      payload: '/inform{{"info_type":"Blog"}}'
+    - title: "research works"
+      payload: '/inform{{"info_type":"Research"}}'
+
+  utter_out_of_scope:
+  - text: "Sorry, I didn't quite understood your request, please try asking about my personal or professional relevant informations. Or if you have a quick question you can reach out me on Twitter (@S_agarM_agar) or ask directly through other platforms."
+
+
+actions:
+  - query_info_type
+  - query_info
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

@@ -1,0 +1,55 @@
+version: "2.0"
+nlu:
+- intent: faq/ask_aboutme
+  examples: |
+    - are you frontedn developer?
+    - do you know frontend?
+    - which is your field
+- intent: faq/ask_contact
+  examples: |
+    - mail
+    - contact you
+    - phone number
+- intent: affirm
+  examples: |
+    - correct
+- intent: deny
+  examples: |
+    - n
+- intent: ask_info
+  examples: |
+    - Tell me about [works](info_type) you have done so far
+    - what about your informations ?
+- intent: goodbye
+  examples: |
+    - cee you later
+    - good night
+- intent: bot_challenge
+  examples: |
+    - am I talking to a bot?
+    - is this a chatbot?
+- intent: mood_great
+  examples: |
+    - amazing
+    - so so perfect
+    - I am going to save the world
+- intent: mood_unhappy
+  examples: |
+    - so saad
+    - not very good
+    - so sad
+- intent: inform
+  examples: |
+    - [blog](info_type)
+    - Oh and [work](info_type) experiences ?
+    - [project](info_type)
+- intent: greet
+  examples: |
+    - hello
+    - moin
+    - hi
+- intent: out_of_scope
+  examples: |
+    - which food is your favorite
+    - 1
+    - 2

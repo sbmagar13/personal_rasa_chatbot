@@ -1,0 +1,26 @@
+[
+  {
+    "text": "good afternoon",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.6342206001281738
+    }
+  },
+  {
+    "text": "namaste",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.7914483547210693
+    }
+  },
+  {
+    "text": "Excuse me",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "ask_info",
+      "confidence": 0.4913288950920105
+    }
+  }
+]

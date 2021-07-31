@@ -1,0 +1,139 @@
+version: "2.0"
+nlu:
+- intent: faq/ask_aboutme
+  examples: |
+    - what is your expertise?
+    - what about devops?
+    - which language are you comfortable in?
+    - do you know about devops?
+    - are you backend developer?
+    - which is your programming language?
+    - what is your main language?
+    - frontend or backend
+- intent: faq/ask_contact
+  examples: |
+    - way to contact sagar
+    - how to contact you?
+    - how can I contact sagar?
+    - your mail address
+    - email
+    - gmail
+    - number
+    - contact number
+    - what is the best way to contact you?
+    - how can I contact?
+    - contact
+    - can I get your mail?
+    - how to contact sagar?
+- intent: affirm
+  examples: |
+    - of course
+    - indeed
+    - y
+    - that sounds good
+    - yes
+- intent: deny
+  examples: |
+    - never
+    - not really
+    - no
+    - no way
+    - I don't think so
+    - don't like that
+- intent: ask_info
+  examples: |
+    - How is your previos [works](info_type)
+    - What are your experiences ?
+    - tell me about your experiences
+    - what kind of [project](info_type) you have done ?
+    - achievements ?
+    - What can you do ?
+- intent: goodbye
+  examples: |
+    - bye
+    - have a nice day
+    - cu
+    - see you later
+    - goodbye
+    - bye bye
+    - good by
+    - see you around
+- intent: bot_challenge
+  examples: |
+    - are you sagar?
+    - are you a bot?
+    - you're a bot, aren't you?
+    - who are you?
+    - am I talking to a human?
+    - what is your name?
+    - is this a real person?
+    - are u there?
+    - are you a human?
+- intent: mood_great
+  examples: |
+    - super stoked
+    - so perfect
+    - I am great
+    - I am amazing
+    - wonderful
+    - feeling like a king
+    - perfect
+    - extremely good
+    - great
+    - so good
+    - I am feeling very good
+- intent: mood_unhappy
+  examples: |
+    - I'm so sad
+    - very sad
+    - super sad
+    - sad
+    - I am sad
+    - my day was horrible
+    - I am disappointed
+    - not good
+    - extremly sad
+    - I don't feel very well
+    - unhappy
+- intent: inform
+  examples: |
+    - I'd like to know about your past [work](info_type)
+    - [work](info_type)
+    - — what about [work](info_type) then ?
+    - [researches](info_type)
+    - I love to read [blogs](info_type)
+    - [research](info_type)
+    - [projects](info_type) done
+    - i prefer reading [blog](info_type)
+    - [Projects](info_type) you have done
+    - i wanna know about [works](info_type)
+    - What about your [work](info_type)
+- intent: greet
+  examples: |
+    - good afternoon
+    - hello there
+    - hey dude
+    - good evening
+    - namaste
+    - hey there
+    - good morning
+    - let's go
+    - Excuse me
+    - hey
+    - goodevening
+    - goodmorning
+- intent: out_of_scope
+  examples: |
+    - kiss
+    - fuck
+    - hell
+    - what the hell
+    - get out
+    - English level
+    - I'm don
+    - your best habits
+    - 8
+    - I need a thesis book
+    - your favorite song
+    - what should I write my blog on
+    - I am your boss
