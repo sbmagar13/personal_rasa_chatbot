@@ -1,56 +1,80 @@
-Technology Stack
+## Run on local machine
+#### Using docker
+Both action server and rasa-core runs as separate processes in the same container.
 
-Rasa
+```
+sudo docker build -t personal-chatbot .
+sudo docker run -it --rm -p 5005:5005 personal-chatbot
+```
 
-MongoDB
-PyMongo
-Flask
+It starts a webserver with rest api and listens for messages at localhost:5006
 
+#### Test over REST api
 
-Coding GuideLines
+```bash
+curl --request POST \
+  --url http://localhost:5005/webhooks/rest/webhook \
+  --header 'content-type: application/json' \
+  --data '{
+    "message": "Hello"
+  }'
+```
+**Response**
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 59
+Access-Control-Allow-Origin: *
 
+[{
+  "recipient_id": "default",
+  "text": "Hi, how is it going?"
+}]
+```
 
-Naming Conventions
+## Run using docker compose
+Optionally to run the actions server in separate container start the services using docker-compose. The action server runs on http://action_server:5055/webhook (docker's internal network). The rasa-core services uses the config/endpoints.local.yml to find this actions server
 
-Classes --> PascalCase
-Variables --> camelCase
-Functions --> snake_case
-Constants --> ALLCAPS
-Blueprint and module names --> snake_case
-Mongo Collection Names --> snake_case
-Fields in Mongo Documents --> camelCase
-routes --> snake_case
+```
+sudo docker-compose up
+```
 
+# Deploy on Heroku for testing
 
+```
+heroku login
 
-Note to the users
+git add .
+git commit -m "commmit message here"
+```
+For free tier heroku deployment, we have to run both rasa server and custom action server in a same container.
+So, pushing project as a docker container:
+```
+sudo heroku container:login
+sudo heroku container:push -a <heroku app name> web
+```
+```
+sudo heroku container:release -a <heroku app name> web
+```
 
-Create an issue with a simple description. We will look into it :)
+# Deploy in server other than heroku
+We can deploy with any method(docker container, docker-compose, or using "supervisord" for multiple services processing)
+##Using supervisord
+Comment following lines in Dockerfile:
+```
+RUN chmod +x /app/scripts/*
 
+CMD /app/scripts/start_services.sh
+```
+Uncomment following lines in Dockerfile:
+```angular2html
+RUN apt-get install -y supervisor
 
+COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+```
+and
+```angular2html
+CMD ["/usr/bin/supervisord"]
+```
 
-Note to the Contributors and developers
-
-Create a separate branch for that issue
-
-
-
-Naming conventions for branches
-
-start with BUG-$SOMEBUG$ if it is a bug
-
-start with FEA-$SOMEFEATURE$ if it is a feature
-
-
-
-Commit naming convention
-
-start with fix: $Issue$ for bug fix
-
-start with feat: $Issue$ for feature addition
-
-(!) use exclamation if that is a breaking change like package version upgrade and others.
-
-and create a pull request :) and we will merge it.
-
-and comment on other's pull request as well :) it will add a different perspective.
+Then you're ready to deploy with process manager "supervisord".
